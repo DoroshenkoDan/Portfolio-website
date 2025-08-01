@@ -1,0 +1,126 @@
+
+
+{
+  "main": {
+    "name": "Daniil Dorosohenko",
+    "description": "Developer crafting modern, responsive web applications with React, Next.js, and cutting-edge technologies. Focused on creating exceptional user experiences through clean code and innovative design solutions.",
+    "downloadCv": "Download CV",
+    "yearsOfExperience": "Years of experience",
+    "projects": "Projects",
+    "technologies": "Technologies",
+    "codeLines": "Code Lines"
+  },
+  "header":{
+    "btnContact": "Collaboration",
+    "nav":{
+      "home": "Home",
+      "services": "Services",
+      "resume": "Resume",
+      "projects": "Projects",
+      "contact": "Contact"
+    }
+  },
+  "services": {
+    "service1": {
+      "title": "Full-Stack Website Development",
+      "items": [
+        "Single-page sites (landing pages)",
+        "Corporate websites",
+        "Portfolio sites, photographer sites, personal pages",
+        "Marketing microsites"
+      ]
+    },
+    "service2": {
+      "title": "Web Application UI Development",
+      "items": [
+        "Dashboards, admin panels",
+        "SaaS application interfaces",
+        "User portals"
+      ]
+    },
+    "service3": {
+      "title": "API and Backend Integration",
+      "items": [
+        "REST API / GraphQL integration",
+        "Authorization and authentication (OAuth, JWT, Firebase)",
+        "Form handling and data submission"
+      ]
+    },
+    "service4": {
+      "title": "Performance and SEO Optimization",
+      "items": [
+        "SSR (Server-Side Rendering)",
+        "SSG (Static Site Generation)",
+        "Image and font optimization",
+        "Metadata, OpenGraph, SEO structure"
+      ]
+    },
+    "service5": {
+      "title": "Responsive Design",
+      "items": [
+        "Mobile device optimization",
+        "Cross-browser compatibility"
+      ]
+    },
+    "service6": {
+      "title": "Third-Party Service Integration",
+      "items": [
+        "Google Analytics, Hotjar",
+        "Stripe, PayPal",
+        "EmailJS, Formspree, Netlify Forms"
+      ]
+    },
+    "service7": {
+      "title": "Website and Application Migration",
+      "items": [
+        "Migration from Create React App to Next.js",
+        "HTML/WordPress to React/Next migration"
+      ]
+    },
+    "service8": {
+      "title": "Refactoring and Technical Support",
+      "items": [
+        "Class components to hooks migration",
+        "Code splitting",
+        "Performance improvements"
+      ]
+    },
+    "service9": {
+      "title": "Component Development",
+      "items": [
+        "Component development and documentation",
+        "Design systems and UI libraries"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Let's work together",
+    "description": "Ready to bring your ideas to life using modern technologies. Contact me to discuss your project.",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address", 
+      "phone": "Phone Number",
+      "selectService": "Select a service",
+      "message": "Type your message here",
+      "sendMessage": "Send Message"
+    },
+    "info": {
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address"
+    },
+    "services": {
+      "service1": "Full-Stack Website Development",
+      "service2": "Web Application UI Development",
+      "service3": "API and Backend Integration",
+      "service4": "Performance and SEO Optimization",
+      "service5": "Responsive Design",
+      "service6": "Third-Party Service Integration",
+      "service7": "Website and Application Migration",
+      "service8": "Refactoring and Technical Support",
+      "service9": "Component Development"
+    }
+  }
+
+}

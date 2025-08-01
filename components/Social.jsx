@@ -7,15 +7,15 @@ import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa'
 const data = [
 	{
 		icon: <FaGithub />,
-		url: "https://github.com"
+		url: "https://github.com/DoroshenkoDan"
 	},
 	{
 		icon: <FaLinkedin />,
-		url: "https://linkedin.com"
+		url: "https://www.linkedin.com/in/doroshenkodan"
 	},
 	{
 		icon: <FaTelegram />,
-		url: "https://telegram.org"
+		url: "https://t.me/DoroshenkoDan"
 	}
 ]
 

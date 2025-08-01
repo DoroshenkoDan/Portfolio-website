@@ -23,11 +23,11 @@ module.exports = {
       primary: "var(--font-jetbrainsMono)",
     },
     colors: {
-      primary: "#1c1c22",
-      white: "#ffffff",
+      primary: "#000000",
+      white: "#b0b0b0",
       accent: {
-        DEFAULT: "#00ff99",
-        hover: "#00e187",
+        DEFAULT: "#ffffff",
+        hover: "#464646",
       },
     },
     extend: {

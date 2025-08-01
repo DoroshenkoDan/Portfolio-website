@@ -1,28 +1,33 @@
 "use client"
 
 import CountUp from 'react-countup'
-
-const stats = [
-	{
-		num: 3,
-		text: "Years of Experience"
-	},
-	{
-		num: 9,
-		text: "Projects Completed"
-	},
-	{
-		num: 21,
-		text: "Technologies mastered"
-	},
-	{
-		num: 500,
-		text: "Code commits"
-	},
-]
-
+import { useTranslations } from 'next-intl'
 
 const Stats = () => {
+	const t = useTranslations('main')
+
+	const stats = [
+		{
+			num: 3,
+			text: t("yearsOfExperience"),
+			suffix: "+"
+		},
+		{
+			num: 9,
+			text: t("projects"),
+			suffix: ""
+		},
+		{
+			num: 21,
+			text: t("technologies"),
+			suffix: ""
+		},
+		{
+			num: 999,
+			text: t("codeLines"),
+			suffix: "+"
+		},
+	]
 
 
 	return (<section
@@ -38,7 +43,8 @@ const Stats = () => {
 							end={item.num}
 							duration={5}
 							delay={2}
-							className="text-4xl xl:text-6xl font-extrabold"
+							suffix={item.suffix}
+							className="text-4xl xl:text-6xl font-extrabold text-accent"
 						/>
 						<p
 							className={`${item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"} leading-snug text-white/80`}

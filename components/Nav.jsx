@@ -1,19 +1,20 @@
 "use client"
 
-import Link from "next/link"
-import { usePathname } from 'next/navigation'
+import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
+import { usePathname } from '@/i18n/navigation'
 
-const links = [
-	{ href: "/", label: "Home" },
-	{ href: "/services", label: "Services" },
-	{ href: "/resume", label: "Resume" },
-	{ href: "/projects", label: "Projects" },
-	{ href: "/contact", label: "Contact" },
-]
 
 const Nav = () => {
+	const t = useTranslations('header')
 	const pathname = usePathname()
-
+	const links = [
+		{ href: "/", label: t("nav.home") },
+		{ href: "/services", label: t("nav.services") },
+		{ href: "/resume", label: t("nav.resume") },
+		{ href: "/projects", label: t("nav.projects") },
+		{ href: "/contact", label: t("nav.contact") },
+	]
 	return (<nav className='flex gap-8 '>
 		{links.map((link, index) => {
 			return <Link href={link.href} key={index}
