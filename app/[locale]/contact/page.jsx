@@ -47,7 +47,7 @@ const Contacts = () => {
 	return (<motion.section
 		initial={{ opacity: 0 }}
 		animate={{ opacity: 1, transition: { duration: 0.4, delay: 2.4, ease: "easeIn" } }}
-		className="py-6"
+		className="py-8 xl:py-12"
 	>
 		<div className='container mx-auto'>
 			<div className="flex flex-col xl:flex-row gap-[30px]">

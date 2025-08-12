@@ -4,164 +4,45 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { motion } from 'framer-motion'
-import { FaCss3, FaFigma, FaHtml5, FaJs } from "react-icons/fa"
-import { SiGithub, SiNextdotjs, SiTailwindcss } from "react-icons/si"
-const about = {
-	title: "About me",
-	description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fugiat ex, neque consequatur quisquam deleniti aliquid delectu.",
-	info: [
-		{
-			fieldName: "Name",
-			fieldValue: "Daniil Dorosohenko"
-		},
-		{
-			fieldName: "Phone",
-			fieldValue: "+380 96 014 28 71"
-		}, {
-			fieldName: "Experience",
-			fieldValue: "3+ Years"
-		}, {
-			fieldName: "Telegram",
-			fieldValue: "@daniil_dorosohenko"
-		}, {
-			fieldName: "Nationality",
-			fieldValue: "Ukrainian"
-		}, {
-			fieldName: "Email",
-			fieldValue: "doroshenko_dan@gmail.com"
-		}, {
-			fieldName: "Freelance",
-			fieldValue: "Available"
-		}, {
-			fieldName: "Languages",
-			fieldValue: "English, Ukrainian"
-		}]
-}
-
-const experience = {
-	icon: "/assets/resume/badge.svg",
-	title: "My experience",
-	description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fugiat ex, neque consequatur quisquam deleniti aliquid delectu.",
-	items: [
-		{
-			company: "Company Name",
-			position: "Position",
-			duration: "2020 - Present",
-		},
-		{
-			company: "Company Name",
-			position: "Position",
-			duration: "2018 - 2020",
-		},
-		{
-			company: "Company Name",
-			position: "Position",
-			duration: "2018 - 2020",
-		},
-		{
-			company: "Company Name",
-			position: "Position",
-			duration: "2018 - 2020",
-		}, {
-			company: "Company Name",
-			position: "Position",
-			duration: "2018 - 2020",
-		}, {
-			company: "Company Name",
-			position: "Position",
-			duration: "2018 - 2020",
-		}
-	]
-}
-
-const education = {
-	icon: "/assets/resume/cap.svg",
-	title: "My education",
-	description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fugiat ex, neque consequatur quisquam deleniti aliquid delectu.",
-	items: [
-		{
-			institution: "Institution Name",
-			degree: "Degree",
-			duration: "2015 - 2019",
-		},
-		{
-			institution: "Institution Name",
-			degree: "Degree",
-			duration: "2015 - 2019",
-		}
-	]
-}
-
-const skills = {
-	title: "My skills",
-	description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fugiat ex, neque consequatur quisquam deleniti aliquid delectu.",
-	items: [
-		{
-			icon: <FaHtml5 />,
-			name: "HTML"
-		},
-		{
-			icon: <FaCss3 />,
-			name: "CSS"
-		},
-		{
-			icon: <FaJs />,
-			name: "JavaScript"
-		},
-		{
-			icon: <SiNextdotjs />,
-			name: "Next.js"
-		},
-		{
-			icon: <SiTailwindcss />,
-			name: "Tailwind CSS"
-		},
-		{
-			icon: <FaFigma />,
-			name: "Figma"
-		},
-		{
-			icon: <SiGithub />,
-			name: "GitHub"
-		},
-	]
-}
-
+import { about, education, experience, skills } from './data.js'
+import { useTranslations } from 'next-intl'
 
 const Resume = () => {
+	const t = useTranslations("resume")
+	const experienceData = experience(t)
 
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
-			className='min-h-[80vh] flex items-center justify-center py-12 xl:py-0'
+			className='min-h-[80vh] flex items-center justify-center py-8 xl:py-12'
 		>
 			<div className="container mx-auto">
 				<Tabs defaultValue="experience" className="flex flex-col xl:flex-row gap-[60px]">
 					<TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-						<TabsTrigger value="experience">Experience</TabsTrigger>
-						<TabsTrigger value="education">Education</TabsTrigger>
-						<TabsTrigger value="skills">Skills</TabsTrigger>
-						<TabsTrigger value="about">About me</TabsTrigger>
+						<TabsTrigger value="experience">{t("tabs.experience")}</TabsTrigger>
+						<TabsTrigger value="education">{t("tabs.education")}</TabsTrigger>
+						<TabsTrigger value="skills">{t("tabs.skills")}</TabsTrigger>
+						<TabsTrigger value="about">{t("tabs.about")}</TabsTrigger>
 					</TabsList>
 					<div className='min-h-[70vh] w-full'>
 						<TabsContent value="experience" className="w-full">
 							<div className='flex flex-col gap-[30px] text-center xl:text-left '>
 								<h3
-									className='text-4xl font-bold'>{experience.title}
+									className='text-4xl font-bold text-accent'>{experienceData.title}
 								</h3>
 								<p
-									className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{experience.description}
+									className='max-w-[600px] mx-auto xl:mx-0'>{experienceData.description}
 								</p>
 								<ScrollArea className='h-[400px]'>
-									<ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
-										{experience.items.map((item, index) => (
-											<li key={index} className='bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1'>
-												<span className='text-accent'>{item.duration}</span>
+									<ul className='grid grid-cols-1  gap-[30px]'>
+										{experienceData.items.map((item, index) => (
+											<li key={index} className='bg-[#232329] py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1'>
+												<span className='text-accent text-lg'>{item.company} | {item.duration}</span>
 												<h3 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-left'>{item.position}</h3>
 												<div className='flex items-center gap-3'>
-													<span className='w-[6px] h-[6px] rounded-full bg-accent'></span>
-													<p className='text-white/60'>{item.company}</p>
+
+													<p className='text-accent'>{item.description}</p>
 												</div>
 											</li>
 										))}
@@ -172,10 +53,10 @@ const Resume = () => {
 						<TabsContent value="education" className="w-full">
 							<div className='flex flex-col gap-[30px] text-center xl:text-left'>
 								<h3
-									className='text-4xl font-bold'>{education.title}
+									className='text-4xl text-accent font-bold'>{education.title}
 								</h3>
 								<p
-									className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{education.description}
+									className='max-w-[600px] mx-auto xl:mx-0'>{education.description}
 								</p>
 								<ScrollArea className='h-[400px]'>
 									<ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
@@ -196,19 +77,19 @@ const Resume = () => {
 						<TabsContent value="skills" className="w-full h-full">
 							<div className="flex flex-col gap-[30px]">
 								<div className='flex flex-col gap-[30px] text-center xl:text-left'>
-									<h3 className='text-4xl font-bold'>{skills.title}</h3>
-									<p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{skills.description}</p>
+									<h3 className='text-4xl text-accent font-bold'>{skills.title}</h3>
+									<p className='max-w-[600px] mx-auto xl:mx-0'>{skills.description}</p>
 								</div>
 								<ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
 									{skills.items.map((skill, index) => (
 										<li key={index}>
 											<TooltipProvider delayDuration={100}>
 												<Tooltip>
-													<TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex items-center justify-center group">
-														<div className='text-6xl group-hover:text-accent transition-all duration-300'>{skill.icon}</div>
+													<TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex items-center justify-center group cursor-default">
+														<div className='text-6xl group-hover:text-accent group-hover:scale-110 transition-all duration-300'>{skill.icon}</div>
 													</TooltipTrigger>
 													<TooltipContent>
-														<p className='font-semibold'>{skill.name}</p>
+														<p className=' text-black font-semibold'>{skill.name}</p>
 													</TooltipContent>
 												</Tooltip>
 											</TooltipProvider>
@@ -219,13 +100,13 @@ const Resume = () => {
 						</TabsContent>
 						<TabsContent value="about" className="w-full text-center xl:text-left">
 							<div className='flex flex-col gap-[30px]'>
-								<h3 className='text-4xl font-bold'>{about.title}</h3>
-								<p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{about.description}</p>
+								<h3 className='text-4xl font-bold text-accent'>{about.title}</h3>
+								<p className='max-w-[600px] mx-auto xl:mx-0'>{about.description}</p>
 								<ul className='grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0'>
 									{about.info.map((item, index) => (
 										<li key={index} className='flex items-center justify-center xl:justify-start gap-4'>
 											<span className='text-white/60'>{item.fieldName}:</span>
-											<span className='text-xl'>{item.fieldValue}</span>
+											<span className='text-xl text-accent'>{item.fieldValue}</span>
 										</li>
 									))}
 								</ul>

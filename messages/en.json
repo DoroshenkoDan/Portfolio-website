@@ -121,6 +121,26 @@
       "service8": "Refactoring and Technical Support",
       "service9": "Component Development"
     }
+  },
+  "resume": {
+    "tabs": {
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "about": "About Me"
+    },
+    "experience": {
+      "title": "My experience",
+      "description": "Frontend Developer with solid experience in building modern, responsive web applications across diverse industries. Skilled in React, Next.js, and TypeScript, with a strong focus on performance optimization, clean architecture, and user-centered design. Proven ability to deliver full-cycle development — from requirement analysis and UI implementation to API integration and deployment. Successfully collaborated with international clients and cross-functional teams, consistently meeting deadlines and maintaining high code quality.",
+      "born2codelab": "I contributed to the development of large-scale web platforms across tourism, finance, and security sectors. My focus was on creating intuitive user interfaces and robust business functionality tailored to diverse user needs. Key projects included: Tourism Platform — Designed a user-friendly interface for travelers and a powerful dashboard for property owners, enabling booking management, analytics, and customer communication. Financial Platform for Exporters — Built a technology-driven solution for small and medium-sized enterprises, streamlining financial operations, improving access to export support tools, and ensuring transaction transparency. AI-Powered Security Platform — Developed an innovative system leveraging artificial intelligence to assess risks, respond to incidents, and provide advanced protection for organizations. I was involved in all stages of development — from architecture planning and UI creation to API integration and deployment. Collaborated closely with designers, backend developers, and product managers to ensure performance, responsiveness, and adherence to UI/UX best practices.",
+      "upwork": "Developed a wide range of projects—from landing pages and promotional websites to complex web applications with dynamic functionality. Took part in all stages of development, including requirements analysis, architecture design, UI implementation, API integration, and deployment. Worked both independently and within teams, maintaining active communication with clients, preparing estimates and reports, and consistently meeting deadlines. Regularly optimized performance, updated codebases, introduced new UI solutions, and ensured alignment with UI/UX guidelines. This experience significantly enhanced my technical expertise, strengthened my ability to make independent decisions, and improved my collaboration skills with clients from various industries.",
+      "toptal": "Worked in a cross-functional team to develop small single-page websites and lightweight e-commerce solutions. Used React to ensure responsive design, fast loading times, and API integration. Participated in the full development cycle—from layout to deployment. Implemented animations (Framer Motion), handled forms with Formik and Yup, and maintained code quality using ESLint, Prettier, Stylelint, and CI with Husky. Gained experience in rapid development, team collaboration, and flexible planning.",
+      "durations": {
+        "born2codelab": "June 2024 - July 2025",
+        "upwork": "June 2023 - July 2024",
+        "toptal": "February 2022 - June 2023"
+      }
+    }
   }
 
 }

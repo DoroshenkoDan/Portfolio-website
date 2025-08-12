@@ -1,32 +1,13 @@
 
-
-'use client'
-
-import { Button } from "@/components/ui/button"
-import { FiDownload } from "react-icons/fi"
-import { useTranslations, useLocale } from 'next-intl'
+import { useTranslations } from 'next-intl'
 // Components
 import Photo from "@/components/Photo"
 import Social from "@/components/Social"
 import Stats from "@/components/Stats"
-import { Link } from '@/i18n/navigation'
-
+import DownloadCvBtn from '@/components/DownloadCvBtn'
 
 const Home = () => {
   const t = useTranslations('main')
-  const locale = useLocale()
-
-  const handleDownloadCV = () => {
-    const link = document.createElement('a')
-    const cvFile = locale === 'uk' ? '/CvUA.pdf' : '/CvEn.pdf'
-    const fileName = locale === 'uk' ? 'Doroshenko-CV-UA.pdf' : 'Doroshenko-CV-EN.pdf'
-
-    link.href = cvFile
-    link.download = fileName
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
 
   return (
     <section className='h-full'>
@@ -38,17 +19,9 @@ const Home = () => {
             <p className='max-w-[500] mb-9 text-white/80'>{t("description")}</p>
 
             <div className='flex flex-col xl:flex-row items-center gap-8'>
-              {/* <Link> */}
-              <Button
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-2"
-                onClick={handleDownloadCV}
-              >
-                <span>{t("downloadCv")}</span>
-                <FiDownload className='text-xl' />
-              </Button>
-              {/* </Link> */}
+
+              <DownloadCvBtn />
+
               <div className='mb-8 xl:mb-0'>
                 <Social
                   containerStyles="flex gap-6"

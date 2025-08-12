@@ -8,7 +8,7 @@ import LanguageSwitcher from './LanguageSwitcher'
 
 const Header = () => {
 	const t = useTranslations('header')
-	return (<header className='py-8 xl:py-12 text-white'>
+	return (<header className=' text-white'>
 		<div className='container mx-auto flex justify-between items-center'>
 
 			{/* Logo */}
@@ -31,6 +31,7 @@ const Header = () => {
 
 			{/* Mobile Navigation */}
 			<div className='xl:hidden'>
+				<LanguageSwitcher />
 				<MobileNav />
 				<div />
 			</div>

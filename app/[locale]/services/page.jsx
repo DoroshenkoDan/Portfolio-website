@@ -22,7 +22,7 @@ const Services = () => {
 
 
 	return (
-		<section className='min-h-[80vh] flex flex-col justify-center py-12 xl:py-2'>
+		<section className='min-h-[80vh] flex flex-col justify-center py-8 xl:py-12'>
 			<div className='container mx-auto'>
 				<motion.div
 					initial={{
