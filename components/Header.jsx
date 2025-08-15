@@ -30,10 +30,9 @@ const Header = () => {
 			</div>
 
 			{/* Mobile Navigation */}
-			<div className='xl:hidden'>
+			<div className='xl:hidden flex items-end gap-6'>
 				<LanguageSwitcher />
 				<MobileNav />
-				<div />
 			</div>
 		</div>
 	</header>)

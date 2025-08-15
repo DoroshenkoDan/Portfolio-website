@@ -13,18 +13,18 @@ const Stats = () => {
 			suffix: "+"
 		},
 		{
-			num: 9,
+			num: 7,
 			text: t("projects"),
 			suffix: ""
 		},
 		{
-			num: 21,
+			num: 43,
 			text: t("technologies"),
 			suffix: ""
 		},
 		{
-			num: 999,
-			text: t("codeLines"),
+			num: 30,
+			text: t("landings"),
 			suffix: "+"
 		},
 	]

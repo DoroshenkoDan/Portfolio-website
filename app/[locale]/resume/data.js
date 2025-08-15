@@ -1,44 +1,44 @@
-import { FaCss3, FaFigma, FaHtml5, FaJs } from "react-icons/fa"
-import { SiGithub, SiNextdotjs, SiTailwindcss } from "react-icons/si"
+import { FaCss3, FaFigma, FaHtml5, FaJs, FaReact, FaDocker, FaGitAlt, FaServer } from "react-icons/fa"
+import { SiGithub, SiNextdotjs, SiTailwindcss, SiTypescript, SiRedux, SiMui, SiFramer, SiGraphql, SiWebpack, SiVite } from "react-icons/si"
 
-export const about = {
-	title: "About me",
-	description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fugiat ex, neque consequatur quisquam deleniti aliquid delectu.",
+export const about = (t) => ({
+	title: t('about.title'),
+	description: t('about.description'),
 	info: [
 		{
-			fieldName: "Name",
-			fieldValue: "Daniil Dorosohenko"
+			fieldName: t('about.info.name'),
+			fieldValue: t('about.values.name')
 		},
 		{
-			fieldName: "Phone",
-			fieldValue: "+380 96 014 28 71"
+			fieldName: t('about.info.phone'),
+			fieldValue: t('about.values.phone')
 		}, 
 		{
-			fieldName: "Experience",
-			fieldValue: "3+ Years"
+			fieldName: t('about.info.experience'),
+			fieldValue: t('about.values.experience')
 		}, 
 		{
-			fieldName: "Telegram",
-			fieldValue: "@daniil_dorosohenko"
+			fieldName: t('about.info.telegram'),
+			fieldValue: t('about.values.telegram')
 		}, 
 		{
-			fieldName: "Nationality",
-			fieldValue: "Ukrainian"
+			fieldName: t('about.info.nationality'),
+			fieldValue: t('about.values.nationality')
 		}, 
 		{
-			fieldName: "Email",
-			fieldValue: "doroshenko_dan@gmail.com"
+			fieldName: t('about.info.email'),
+			fieldValue: t('about.values.email')
 		}, 
 		{
-			fieldName: "Freelance",
-			fieldValue: "Available"
+			fieldName: t('about.info.freelance'),
+			fieldValue: t('about.values.freelance')
 		}, 
 		{
-			fieldName: "Languages",
-			fieldValue: "English, Ukrainian"
+			fieldName: t('about.info.languages'),
+			fieldValue: t('about.values.languages')
 		}
 	]
-}
+})
 
 export const experience = (t) => ({
 	icon: "/assets/resume/badge.svg",
@@ -66,27 +66,10 @@ export const experience = (t) => ({
 	]
 })
 
-export const education = {
-	icon: "/assets/resume/cap.svg",
-	title: "My education",
-	description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fugiat ex, neque consequatur quisquam deleniti aliquid delectu.",
-	items: [
-		{
-			institution: "Institution Name",
-			degree: "Degree",
-			duration: "2015 - 2019",
-		},
-		{
-			institution: "Institution Name",
-			degree: "Degree",
-			duration: "2015 - 2019",
-		}
-	]
-}
 
-export const skills = {
-	title: "My skills",
-	description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fugiat ex, neque consequatur quisquam deleniti aliquid delectu.",
+export const skills = (t) => ({
+	title: t('skills.title'),
+	description: t('skills.description'),
 	items: [
 		{
 			icon: <FaHtml5 />,
@@ -101,20 +84,76 @@ export const skills = {
 			name: "JavaScript"
 		},
 		{
+			icon: <SiTypescript />,
+			name: "TypeScript"
+		},
+		{
+			icon: <FaReact />,
+			name: "React"
+		},
+		{
 			icon: <SiNextdotjs />,
 			name: "Next.js"
+		},
+		{
+			icon: <SiRedux />,
+			name: "Redux"
+		},
+		{
+			icon: <FaJs />,
+			name: "Zustand"
 		},
 		{
 			icon: <SiTailwindcss />,
 			name: "Tailwind CSS"
 		},
 		{
-			icon: <FaFigma />,
-			name: "Figma"
+			icon: <SiMui />,
+			name: "Material UI"
+		},
+		{
+			icon: <FaCss3 />,
+			name: "Emotion"
+		},
+		{
+			icon: <SiFramer />,
+			name: "Framer Motion"
+		},
+		{
+			icon: <FaServer />,
+			name: "REST API"
+		},
+		{
+			icon: <SiGraphql />,
+			name: "GraphQL"
+		},
+		{
+			icon: <FaDocker />,
+			name: "Docker"
+		},
+		{
+			icon: <SiWebpack />,
+			name: "Webpack"
+		},
+		{
+			icon: <SiVite />,
+			name: "Vite"
+		},
+		{
+			icon: <FaGitAlt />,
+			name: "Git"
 		},
 		{
 			icon: <SiGithub />,
 			name: "GitHub"
 		},
+		{
+			icon: <FaFigma />,
+			name: "Figma"
+		},
+		{
+			icon: <FaGitAlt />,
+			name: "CI/CD"
+		},
 	]
-}
+})

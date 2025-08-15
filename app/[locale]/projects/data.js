@@ -1,0 +1,42 @@
+export const projects = (t) => [
+	{
+		num: "01",
+		title: "Peak Defence",
+		description: t('projects.peakDefence.description'),
+		image: "/assets/work/defence.jpg",
+		live: "https://peakdefence.com",
+		github: "",
+	},
+	{
+		num: "02",
+		title: "Marco",
+		description: t('projects.marco.description'),
+		image: "/assets/work/marco.jpg",
+		live: "https://www.marcofi.com",
+		github: "",
+	},
+	{
+		num: "03",
+		title: "Pm-Partners",
+		description: t('projects.pmPartners.description'),
+		image: "/assets/work/pm-partners.jpg",
+		live: "https://www.pm-partners.com.au",
+		github: "",
+	},
+	{
+		num: "04",
+		title: "Glamp",
+		description: t('projects.glamp.description'),
+		image: "/assets/work/glamp.jpg",
+		live: "https://glamp.born2codelab.com",
+		github: "",
+	},
+	{
+		num: "05",
+		title: "Lemon Squizy",
+		description: t('projects.lemonSquizy.description'),
+		image: "/assets/work/lemon.jpg",
+		live: "https://lemonsquizy.net",
+		github: "",
+	},
+]

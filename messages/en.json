@@ -1,5 +1,3 @@
-
-
 {
   "main": {
     "name": "Daniil Dorosohenko",
@@ -8,11 +6,11 @@
     "yearsOfExperience": "Years of experience",
     "projects": "Projects",
     "technologies": "Technologies",
-    "codeLines": "Code Lines"
+    "landings": "Landings"
   },
-  "header":{
+  "header": {
     "btnContact": "Collaboration",
-    "nav":{
+    "nav": {
       "home": "Home",
       "services": "Services",
       "resume": "Resume",
@@ -99,7 +97,7 @@
     "form": {
       "firstName": "First Name",
       "lastName": "Last Name",
-      "email": "Email Address", 
+      "email": "Email Address",
       "phone": "Phone Number",
       "selectService": "Select a service",
       "message": "Type your message here",
@@ -125,9 +123,36 @@
   "resume": {
     "tabs": {
       "experience": "Experience",
-      "education": "Education",
       "skills": "Skills",
       "about": "About Me"
+    },
+    "about": {
+      "title": "About me",
+      "description": "I'm a Frontend Developer who values not just writing code, but creating solutions that bring real value to people. I'm driven by the idea of combining aesthetics with functionality — crafting interfaces that are not only visually appealing but also intuitive and user-friendly.\nI enjoy working in teams that embrace openness, knowledge sharing, and a shared commitment to quality. I'm a good listener, quick to adapt to new environments, and always looking for ways to improve the product.\nIn my work, I prioritize structure, attention to detail, and continuous self-improvement. I believe that technology is a tool, and true results come from collaboration, creativity, and responsibility.",
+      "info": {
+        "name": "Name",
+        "phone": "Phone",
+        "experience": "Experience",
+        "telegram": "Telegram",
+        "nationality": "Nationality",
+        "email": "Email",
+        "freelance": "Freelance",
+        "languages": "Languages"
+      },
+      "values": {
+        "name": "Daniil Dorosohenko",
+        "phone": "+380 96 014 28 71",
+        "experience": "3+ Years",
+        "telegram": "@DoroshenkoDan",
+        "nationality": "Ukrainian",
+        "email": "doroshenko.daniil.a@gmail.com",
+        "freelance": "Available",
+        "languages": "English, Ukrainian"
+      }
+    },
+    "skills":{
+      "title": "My Skills",
+      "description":"Here are just the main technologies. The full list can be viewed in my CV, available for download on the main page."
     },
     "experience": {
       "title": "My experience",
@@ -141,6 +166,22 @@
         "toptal": "February 2022 - June 2023"
       }
     }
+  },
+  "projects": {
+    "peakDefence": {
+      "description": "AI platform and methodology for cybersecurity that combines artificial intelligence, graph technologies, and expert support. Wingman AI automates security management, prioritizes risks, reduces alert noise, and ensures compliance with standards. Additionally offers Virtual-CISO services, compliance and risk management."
+    },
+    "marco": {
+      "description": "Fintech platform that simplifies international trade by offering SME companies non-traditional financing—factoring, asset-based lending, supply-chain financing. Marco automates access to capital, helping businesses expand quickly and flexibly, especially for those underserved by traditional banking financing."
+    },
+    "pmPartners": {
+      "description": "Australian consulting and training company in project management, specializing in traditional, Agile, and hybrid approaches. Provides advisory, delivery, resourcing, and training (PRINCE2, SAFe, Scrum, etc.), helping organizations execute strategies, enhance competencies, reduce risks and costs."
+    },
+    "glamp": {
+      "description": "Online platform for booking glamping sites across Ukraine. It combines comfort and nature, offering over 1000 options for recreation. Users can easily book places through the website, make secure payments, and enjoy personalized service. The goal is to make active recreation accessible, quality, and carefree."
+    },
+    "lemonSquizy": {
+      "description": "AI platform for business that automatically analyzes documents, extracts key data, identifies patterns, and provides recommendations. Helps reduce manual work, make real-time decisions, and ensures data security."
+    }
   }
-
 }
