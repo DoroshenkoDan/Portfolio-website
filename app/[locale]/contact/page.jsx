@@ -2,18 +2,19 @@
 
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa"
+import { FaEnvelope, FaPhoneAlt } from "react-icons/fa"
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
-
+import { info } from './data'
 const Contacts = () => {
 	const t = useTranslations('contact')
 	const searchParams = useSearchParams()
 	const [selectedService, setSelectedService] = useState("")
+	const infoData = info(t)
 
 	useEffect(() => {
 		const serviceParam = searchParams.get('service')
@@ -24,24 +25,6 @@ const Contacts = () => {
 		}
 	}, [searchParams])
 
-
-	const info = [
-		{
-			icon: <FaPhoneAlt />,
-			title: t("info.phone"),
-			content: "+1 234 567 890"
-		},
-		{
-			icon: <FaEnvelope />,
-			title: t("info.email"),
-			content: "doroshenko.daniil.a@gmail.com"
-		},
-		{
-			icon: <FaMapMarkerAlt />,
-			title: t("info.address"),
-			content: "123 Main St, City, Country"
-		}
-	]
 
 
 	return (<motion.section
@@ -54,7 +37,7 @@ const Contacts = () => {
 				<div className='xl:w-[54%] order-2 xl:order-none'>
 					<form className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl'>
 						<h3 className='text-4xl text-accent'>{t("title")}</h3>
-						<p className='text-white/60'>{t("description")}</p>
+						<p className='text-white/60 whitespace-pre-line'>{t("description")}</p>
 						<div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
 							<Input
 								type="text"
@@ -96,6 +79,7 @@ const Contacts = () => {
 									<SelectItem value="service7">{t("services.service7")}</SelectItem>
 									<SelectItem value="service8">{t("services.service8")}</SelectItem>
 									<SelectItem value="service9">{t("services.service9")}</SelectItem>
+									<SelectItem value="service10">{t("services.service10")}</SelectItem>
 								</SelectGroup>
 							</SelectContent>
 						</Select>
@@ -106,7 +90,7 @@ const Contacts = () => {
 					</form>
 				</div>
 				<div className='flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0'>
-					<ul className='flex flex-col gap-10'>{info.map((item, index) => {
+					<ul className='flex flex-col gap-10'>{infoData.map((item, index) => {
 						return (
 							<li key={index} className='flex items-center gap-6'>
 								<div className='w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center'>

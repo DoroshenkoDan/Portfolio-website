@@ -2,7 +2,7 @@
 
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname } from '@/i18n/navigation'
 import { CiMenuFries } from 'react-icons/ci'
 
 
@@ -27,7 +27,7 @@ const MobileNav = () => {
 				<SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
 				<div className='mt-8 mb-8 text-center text-2xl'>
 					<Link className='text-4xl font-semibold mb-8' href="/">
-						<h1>Dan <span className='text-accent'>.</span></h1>
+						<h1 className='text-accent'>Dan .</h1>
 					</Link>
 				</div>
 				<nav className='flex flex-col gap-8 justify-center items-center'>

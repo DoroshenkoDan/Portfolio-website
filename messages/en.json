@@ -93,7 +93,7 @@
   },
   "contact": {
     "title": "Let's work together",
-    "description": "Ready to bring your ideas to life using modern technologies. Contact me to discuss your project.",
+    "description": "Ready to bring your ideas to life using modern technologies. \n Contact me to discuss your project.",
     "form": {
       "firstName": "First Name",
       "lastName": "Last Name",
@@ -105,8 +105,7 @@
     },
     "info": {
       "phone": "Phone",
-      "email": "Email",
-      "address": "Address"
+      "email": "Email"
     },
     "services": {
       "service1": "Full-Stack Website Development",
@@ -117,7 +116,8 @@
       "service6": "Third-Party Service Integration",
       "service7": "Website and Application Migration",
       "service8": "Refactoring and Technical Support",
-      "service9": "Component Development"
+      "service9": "Component Development",
+      "service10": "Other"
     }
   },
   "resume": {
