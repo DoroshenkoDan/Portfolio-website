@@ -49,9 +49,9 @@ const Projects = () => {
 					className="fixed bottom-4 left-4 z-50 max-w-md bg-primary"
 				>
 					<Alert variant="default">
-						<AlertTitle className='text-lg font-semibold'>Private Repository</AlertTitle>
+						<AlertTitle className='text-lg font-semibold'>{t("projects.alertMessage.title")}</AlertTitle>
 						<AlertDescription>
-							Sorry, this is a private repository.
+							{t("projects.alertMessage.description")}
 						</AlertDescription>
 					</Alert>
 				</motion.div>

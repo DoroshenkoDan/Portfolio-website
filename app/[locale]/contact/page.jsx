@@ -2,18 +2,28 @@
 
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { FaEnvelope, FaPhoneAlt } from "react-icons/fa"
+import { AnimatePresence, motion } from "framer-motion"
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { info } from './data'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 const Contacts = () => {
 	const t = useTranslations('contact')
 	const searchParams = useSearchParams()
 	const [selectedService, setSelectedService] = useState("")
+	const [showAlert, setShowAlert] = useState(false)
+	const [formData, setFormData] = useState({
+		firstName: '',
+		lastName: '',
+		email: '',
+		phone: '',
+		message: ''
+	})
+	const [isLoading, setIsLoading] = useState(false)
+	const [submitStatus, setSubmitStatus] = useState(null)
 	const infoData = info(t)
 
 	useEffect(() => {
@@ -25,6 +35,65 @@ const Contacts = () => {
 		}
 	}, [searchParams])
 
+	const handleInputChange = (e) => {
+		const { name, value } = e.target
+		setFormData(prev => ({
+			...prev,
+			[name]: value
+		}))
+	}
+
+	const handleSubmit = async (e) => {
+		e.preventDefault()
+		setIsLoading(true)
+		setSubmitStatus(null)
+
+		try {
+			const response = await fetch('/api/send', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					...formData,
+					service: selectedService ? t(`services.${selectedService}`) : ''
+				}),
+			})
+
+			const result = await response.json()
+
+			if (response.ok) {
+				setSubmitStatus('success')
+				setShowAlert(true)
+				setFormData({
+					firstName: '',
+					lastName: '',
+					email: '',
+					phone: '',
+					message: ''
+				})
+				setSelectedService('')
+				setTimeout(() => {
+					setShowAlert(false)
+				}, 5000)
+			} else {
+				setSubmitStatus('error')
+				setShowAlert(true)
+				setTimeout(() => {
+					setShowAlert(false)
+				}, 5000)
+			}
+		} catch (error) {
+			setSubmitStatus('error')
+			setShowAlert(true)
+			setTimeout(() => {
+				setShowAlert(false)
+			}, 5000)
+		}
+
+		setIsLoading(false)
+	}
+
 
 
 	return (<motion.section
@@ -32,27 +101,60 @@ const Contacts = () => {
 		animate={{ opacity: 1, transition: { duration: 0.4, delay: 2.4, ease: "easeIn" } }}
 		className="py-8 xl:py-12"
 	>
+		<AnimatePresence>
+			{showAlert && (
+				<motion.div
+					initial={{ x: 400, opacity: 0 }}
+					animate={{ x: 0, opacity: 1 }}
+					exit={{ x: 400, opacity: 0 }}
+					transition={{ type: "spring", stiffness: 300, damping: 30 }}
+					className="fixed bottom-4 right-4 z-50 max-w-md bg-primary"
+				>
+					<Alert variant={submitStatus === 'success' ? 'default' : 'destructive'}>
+						<AlertTitle className='text-lg font-semibold'>
+							{submitStatus === 'success' ? t("form.success.title") : t("form.error.title")}
+						</AlertTitle>
+						<AlertDescription>
+							{submitStatus === 'success' ? t("form.success.description") : t("form.error.description")}
+						</AlertDescription>
+					</Alert>
+				</motion.div>
+			)}
+		</AnimatePresence>
 		<div className='container mx-auto'>
 			<div className="flex flex-col xl:flex-row gap-[30px]">
 				<div className='xl:w-[54%] order-2 xl:order-none'>
-					<form className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl'>
+					<form onSubmit={handleSubmit} className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl'>
 						<h3 className='text-4xl text-accent'>{t("title")}</h3>
 						<p className='text-white/60 whitespace-pre-line'>{t("description")}</p>
 						<div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
 							<Input
 								type="text"
+								name="firstName"
+								value={formData.firstName}
+								onChange={handleInputChange}
 								placeholder={t("form.firstName")}
 							/>
 							<Input
 								type="text"
+								name="lastName"
+								value={formData.lastName}
+								onChange={handleInputChange}
 								placeholder={t("form.lastName")}
 							/>
 							<Input
 								type="email"
+								name="email"
+								value={formData.email}
+								onChange={handleInputChange}
 								placeholder={t("form.email")}
+								required
 							/>
 							<Input
 								type="tel"
+								name="phone"
+								value={formData.phone}
+								onChange={handleInputChange}
 								placeholder={t("form.phone")}
 							/>
 						</div>
@@ -83,9 +185,23 @@ const Contacts = () => {
 								</SelectGroup>
 							</SelectContent>
 						</Select>
-						<Textarea className="h-[200px]" placeholder={t("form.message")} />
+						<Textarea
+							className="h-[200px]"
+							name="message"
+							value={formData.message}
+							onChange={handleInputChange}
+							placeholder={t("form.message")}
+							required
+						/>
 						<div className='flex justify-center'>
-							<Button size="md" className='max-w-xs'>{t("form.sendMessage")}</Button>
+							<Button
+								type="submit"
+								size="md"
+								className='max-w-xs'
+								disabled={isLoading}
+							>
+								{isLoading ? t("form.sending") : t("form.sendMessage")}
+							</Button>
 						</div>
 					</form>
 				</div>

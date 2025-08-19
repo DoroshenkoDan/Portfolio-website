@@ -19,7 +19,7 @@ const Photo = () => {
 						transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" }
 
 					}}
-					className='w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute'>
+					className='w-[300px] h-[300px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute'>
 					<Image src="/assets/MyFace.png"
 						priority
 						quality={100}
@@ -35,8 +35,8 @@ const Photo = () => {
 					xmlns="http://www.w3.org/2000/svg"
 				>
 					<motion.circle
-						cx="247"
-						cy="247"
+						cx="252"
+						cy="252"
 						r="240px"
 						stroke="#ffffff"
 						strokeWidth="4"
