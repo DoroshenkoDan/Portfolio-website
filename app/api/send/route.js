@@ -1,9 +1,19 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Перевіряємо наявність API ключа
+if (!process.env.RESEND_API_KEY) {
+  console.warn('RESEND_API_KEY is not set');
+}
+
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function POST(request) {
   try {
+    // Перевіряємо чи налаштований Resend
+    if (!resend) {
+      return Response.json({ error: 'Email service is not configured' }, { status: 500 });
+    }
+
     const body = await request.json();
     const { firstName, lastName, email, phone, service, message } = body;
 

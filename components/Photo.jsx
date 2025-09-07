@@ -12,6 +12,19 @@ const Photo = () => {
 					opacity: 1,
 					transition: { delay: 2, duration: 0.4, ease: "easeInOut" }
 				}}>
+
+				<motion.div
+					initial={{ opacity: 0, scale: 0.8 }}
+					animate={{
+						opacity: 0.6,
+						scale: 1,
+						transition: { delay: 2.2, duration: 0.6, ease: "easeInOut" }
+					}}
+					className='w-[300px] h-[300px] xl:w-[498px] xl:h-[498px] absolute z-0'
+				>
+					<div className="w-full h-full rounded-full bg-white/10  border border-white/20"></div>
+				</motion.div>
+
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{
@@ -19,7 +32,7 @@ const Photo = () => {
 						transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" }
 
 					}}
-					className='w-[300px] h-[300px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute'>
+					className='w-[300px] h-[290px] xl:w-[498px] xl:h-[498px]  absolute z-10'>
 					<Image src="/assets/MyFace.png"
 						priority
 						quality={100}

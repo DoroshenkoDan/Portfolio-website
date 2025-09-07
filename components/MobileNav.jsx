@@ -3,20 +3,24 @@
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import Link from 'next/link'
 import { usePathname } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 import { CiMenuFries } from 'react-icons/ci'
+import { Button } from "./ui/button"
 
 
-const links = [
-	{ href: "/", label: "Home" },
-	{ href: "/services", label: "Services" },
-	{ href: "/resume", label: "Resume" },
-	{ href: "/projects", label: "Projects" },
-	{ href: "/contact", label: "Contact" },
-]
 
 
 const MobileNav = () => {
 	const pathname = usePathname()
+	const t = useTranslations('header')
+
+	const links = [
+		{ href: "/", label: t("nav.home") },
+		{ href: "/services", label: t("nav.services") },
+		{ href: "/resume", label: t("nav.resume") },
+		{ href: "/projects", label: t("nav.projects") },
+		{ href: "/contact", label: t("nav.contact") },
+	]
 
 	return (
 		<Sheet>
@@ -26,9 +30,11 @@ const MobileNav = () => {
 			<SheetContent className='flex flex-col'>
 				<SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
 				<div className='mt-8 mb-8 text-center text-2xl'>
-					<Link className='text-4xl font-semibold mb-8' href="/">
-						<h1 className='text-accent'>Dan .</h1>
-					</Link>
+					<SheetClose asChild key="/">
+						<Link className='text-4xl font-semibold mb-8' href="/">
+							<h1 className='text-accent'>Dan .</h1>
+						</Link>
+					</SheetClose>
 				</div>
 				<nav className='flex flex-col gap-8 justify-center items-center'>
 					{links.map((link) => (
@@ -42,7 +48,15 @@ const MobileNav = () => {
 							</Link>
 						</SheetClose>
 					))}
+					<SheetClose asChild key="/contact">
+						<Link href="/contact" className="w-full p-4">
+							<Button className="w-full">
+								{t("btnContact")}
+							</Button>
+						</Link>
+					</SheetClose>
 				</nav>
+
 			</SheetContent>
 		</Sheet>)
 }
