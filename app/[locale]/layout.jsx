@@ -1,12 +1,15 @@
+
 import { JetBrains_Mono } from "next/font/google"
 import "../globals.css"
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
+import Snowfall from 'react-snowfall'
 import { routing } from '@/i18n/routing'
 // Components
 import Header from "@/components/Header"
 import PageTransition from '@/components/PageTransition'
 import StairTransition from '@/components/StairTransition'
+import SnowFall from '@/components/SnowFall'
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -31,11 +34,12 @@ export default async function RootLayout({ children, params }) {
         <NextIntlClientProvider locale={locale}>
           <Header />
           <StairTransition />
+          <SnowFall />
           <PageTransition>
             {children}
           </PageTransition>
         </NextIntlClientProvider>
       </body>
-    </html>
+    </html >
   )
 }
