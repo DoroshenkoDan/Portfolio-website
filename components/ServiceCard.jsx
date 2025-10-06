@@ -108,8 +108,6 @@ const ServiceCard = ({ service, index, t }) => {
 				className={`border-b w-full transition-all duration-500 origin-left ${isInView ? 'border-accent' : 'border-white/20 group-hover:border-accent'
 					}`}
 			></motion.div>
-
-			{/* Анимированный фон */}
 			<motion.div
 				initial={{ scale: 0, opacity: 0 }}
 				animate={isInView ? { scale: 1, opacity: 0.1 } : { scale: 0, opacity: 0 }}

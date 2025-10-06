@@ -122,90 +122,94 @@ const Contacts = () => {
 			)}
 		</AnimatePresence>
 		<div className='container mx-auto'>
-			<div className="flex flex-col xl:flex-row gap-[30px]">
-				<div className='xl:w-[54%] order-2 xl:order-none'>
-					<form onSubmit={handleSubmit} className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl'>
-						<h3 className='text-4xl text-accent'>{t("title")}</h3>
-						<p className='text-white/60 whitespace-pre-line'>{t("description")}</p>
-						<div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
-							<Input
-								type="text"
-								name="firstName"
-								value={formData.firstName}
-								onChange={handleInputChange}
-								placeholder={t("form.firstName")}
-							/>
-							<Input
-								type="text"
-								name="lastName"
-								value={formData.lastName}
-								onChange={handleInputChange}
-								placeholder={t("form.lastName")}
-							/>
-							<Input
-								type="email"
-								name="email"
-								value={formData.email}
-								onChange={handleInputChange}
-								placeholder={t("form.email")}
-								required
-							/>
-							<Input
-								type="tel"
-								name="phone"
-								value={formData.phone}
-								onChange={handleInputChange}
-								placeholder={t("form.phone")}
-							/>
-						</div>
-						<Select
-							value={selectedService}
-							onValueChange={(newValue) => {
-								if (newValue && newValue.trim() !== "") {
-									setSelectedService(newValue)
-								}
-							}}
-						>
-							<SelectTrigger className={selectedService ? " text-accent" : ""}>
-								<SelectValue placeholder={t("form.selectService")} />
-							</SelectTrigger>
-							<SelectContent>
-								<SelectGroup>
-									<SelectLabel>{t("form.selectService")}</SelectLabel>
-									<SelectItem value="service1">{t("services.service1")}</SelectItem>
-									<SelectItem value="service2">{t("services.service2")}</SelectItem>
-									<SelectItem value="service3">{t("services.service3")}</SelectItem>
-									<SelectItem value="service4">{t("services.service4")}</SelectItem>
-									<SelectItem value="service5">{t("services.service5")}</SelectItem>
-									<SelectItem value="service6">{t("services.service6")}</SelectItem>
-									<SelectItem value="service7">{t("services.service7")}</SelectItem>
-									<SelectItem value="service8">{t("services.service8")}</SelectItem>
-									<SelectItem value="service9">{t("services.service9")}</SelectItem>
-									<SelectItem value="service10">{t("services.service10")}</SelectItem>
-								</SelectGroup>
-							</SelectContent>
-						</Select>
-						<Textarea
-							className="h-[200px]"
-							name="message"
-							value={formData.message}
+			{/* <div className="flex flex-col xl:flex-row gap-[30px]"> */}
+			<div className='xl:w-[60%] order-2 xl:order-none overflow-hidden rounded-xl border border-accent/30 shadow-[0_0_25px_rgba(34,197,94,0.4)] shadow-accent/10 mx-auto '>
+				<form onSubmit={handleSubmit} className='flex flex-col gap-6 p-10 bg-white/5 rounded-xl '>
+					<h3 className='text-4xl text-accent'>{t("title")}</h3>
+					<p className='text-white/60 whitespace-pre-line'>{t("description")}</p>
+					<div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
+						<Input
+							type="text"
+							name="firstName"
+							value={formData.firstName}
 							onChange={handleInputChange}
-							placeholder={t("form.message")}
-							required
+							placeholder={t("form.firstName")}
+							className="placeholder:text-white"
 						/>
-						<div className='flex justify-center'>
-							<Button
-								type="submit"
-								size="md"
-								className='max-w-xs'
-								disabled={isLoading}
-							>
-								{isLoading ? t("form.sending") : t("form.sendMessage")}
-							</Button>
-						</div>
-					</form>
-				</div>
-				<div className='flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0'>
+						<Input
+							type="text"
+							name="lastName"
+							value={formData.lastName}
+							onChange={handleInputChange}
+							placeholder={t("form.lastName")}
+							className="placeholder:text-white"
+						/>
+						<Input
+							type="email"
+							name="email"
+							value={formData.email}
+							onChange={handleInputChange}
+							placeholder={t("form.email")}
+							required
+							className="placeholder:text-white"
+						/>
+						<Input
+							type="tel"
+							name="phone"
+							value={formData.phone}
+							onChange={handleInputChange}
+							placeholder={t("form.phone")}
+							className="placeholder:text-white"
+						/>
+					</div>
+					<Select
+						value={selectedService}
+						onValueChange={(newValue) => {
+							if (newValue && newValue.trim() !== "") {
+								setSelectedService(newValue)
+							}
+						}}
+					>
+						<SelectTrigger className={selectedService ? " text-accent" : "text-white"}>
+							<SelectValue placeholder={t("form.selectService")} />
+						</SelectTrigger>
+						<SelectContent>
+							<SelectGroup>
+								<SelectLabel>{t("form.selectService")}</SelectLabel>
+								<SelectItem value="service1">{t("services.service1")}</SelectItem>
+								<SelectItem value="service2">{t("services.service2")}</SelectItem>
+								<SelectItem value="service3">{t("services.service3")}</SelectItem>
+								<SelectItem value="service4">{t("services.service4")}</SelectItem>
+								<SelectItem value="service5">{t("services.service5")}</SelectItem>
+								<SelectItem value="service6">{t("services.service6")}</SelectItem>
+								<SelectItem value="service7">{t("services.service7")}</SelectItem>
+								<SelectItem value="service8">{t("services.service8")}</SelectItem>
+								<SelectItem value="service9">{t("services.service9")}</SelectItem>
+								<SelectItem value="service10">{t("services.service10")}</SelectItem>
+							</SelectGroup>
+						</SelectContent>
+					</Select>
+					<Textarea
+						className="h-[200px] placeholder:text-white"
+						name="message"
+						value={formData.message}
+						onChange={handleInputChange}
+						placeholder={t("form.message")}
+						required
+					/>
+					<div className='flex justify-center'>
+						<Button
+							type="submit"
+							size="md"
+							className='max-w-xs'
+							disabled={isLoading}
+						>
+							{isLoading ? t("form.sending") : t("form.sendMessage")}
+						</Button>
+					</div>
+				</form>
+			</div>
+			{/* <div className='flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0'>
 					<ul className='flex flex-col gap-10'>{infoData.map((item, index) => {
 						return (
 							<li key={index} className='flex items-center gap-6'>
@@ -219,9 +223,9 @@ const Contacts = () => {
 							</li>
 						)
 					})}</ul>
-				</div>
-			</div>
+				</div> */}
 		</div>
+		{/* </div> */}
 	</motion.section>)
 }
 
