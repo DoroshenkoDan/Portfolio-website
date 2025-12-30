@@ -10,6 +10,7 @@ import PageTransition from '@/components/PageTransition'
 import StairTransition from '@/components/StairTransition'
 // import SnowFall from '@/components/SnowFall'
 import Triangles from '@/components/Triangles'
+import HalvesPageTransition from '@/components/HalvesPageTransition'
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800",],
@@ -32,12 +33,13 @@ export default async function RootLayout({ children, params }) {
       <body className={jetbrainsMono.variable}>
         <NextIntlClientProvider locale={locale}>
           <Header />
-          <StairTransition />
+          {/* <StairTransition /> */}
           {/* <SnowFall /> */}
+          <HalvesPageTransition />
           <Triangles />
-          <PageTransition>
-            {children}
-          </PageTransition>
+          {/* <PageTransition> */}
+          {children}
+          {/* </PageTransition> */}
         </NextIntlClientProvider>
       </body>
     </html >

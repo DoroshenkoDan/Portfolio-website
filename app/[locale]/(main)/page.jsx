@@ -1,5 +1,7 @@
-
+"use client"
 import { useTranslations } from 'next-intl'
+import { motion } from 'framer-motion'
+
 // Components
 import Photo from "@/components/Photo"
 import Social from "@/components/Social"
@@ -10,7 +12,11 @@ const Home = () => {
   const t = useTranslations('main')
 
   return (
-    <section className='h-full'>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { delay: 1.7, duration: 0.4, ease: "easeIn" } }}
+      className='h-full'
+    >
       <div className='container mx-auto h-full'>
         <div className='flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24'>
           <div className='text-center xl:text-left order-2 xl:order-none'>
@@ -36,7 +42,7 @@ const Home = () => {
         </div>
       </div >
       <Stats />
-    </section >
+    </motion.div>
   )
 }
 
