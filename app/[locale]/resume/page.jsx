@@ -37,7 +37,7 @@ const Resume = () => {
 								{/* <ScrollArea className='h-[400px]'> */}
 								<ul className='grid grid-cols-1  gap-[30px]'>
 									{experienceData.items.map((item, index) => (
-										<li key={index} className='bg-[#232329] border border-accent py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1 shadow-lg shadow-accent/10'>
+										<li key={index} className='bg-white/5 border border-accent/30 py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1 shadow-[0_0_25px_rgba(34,197,94,0.4)] shadow-accent/10'>
 											<span className='text-accent text-lg'>{item.company} | {item.duration}</span>
 											<h3 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-left'>{item.position}</h3>
 											<div className='flex items-center gap-3'>
@@ -58,7 +58,7 @@ const Resume = () => {
 								</div>
 								<ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
 									{skillsData.items.map((skill, index) => (
-										<li key={index} className='bg-[#232329] border border-accent rounded-xl'>
+										<li key={index} className='bg-white/5 border border-accent/30 rounded-xl shadow-[0_0_25px_rgba(34,197,94,0.4)] shadow-accent/10'>
 											<TooltipProvider delayDuration={100}>
 												<Tooltip>
 													<TooltipTrigger className="w-full h-[150px] flex items-center justify-center group cursor-default">

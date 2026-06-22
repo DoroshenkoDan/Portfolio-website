@@ -46,22 +46,28 @@ export const experience = (t) => ({
 	description: t('experience.description'),
 	items: [
 		{
+			company: "Fiverr",
+			position: "Frontend Developer",
+			duration: t('experience.durations.fiverr'),
+			description: t('experience.fiverr'),
+		},
+		{
 			company: "Born2CodeLab",
 			position: "Frontend Developer",
 			duration: t('experience.durations.born2codelab'),
 			description: t('experience.born2codelab'),
 		},
 		{
-			company: "UpWork",
+			company: "NDA",
 			position: "Frontend Developer",
-			duration: t('experience.durations.upwork'),
-			description: t('experience.upwork'),
+			duration: t('experience.durations.nda'),
+			description: t('experience.nda'),
 		},
 		{
-			company: "Toptal",
-			position: "Frontend Developer",
-			duration: t('experience.durations.toptal'),
-			description: t('experience.toptal'),
+			company: "UpWork",
+			position: "React Frontend Developer",
+			duration: t('experience.durations.upwork'),
+			description: t('experience.upwork'),
 		},
 	]
 })

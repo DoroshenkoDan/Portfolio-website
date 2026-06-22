@@ -81,7 +81,7 @@ const Projects = () => {
 									</Tooltip>
 								</TooltipProvider>
 							</Link>
-							<Link href={project.github || "#"} onClick={handleGithubClick}>
+							<Link href={project.github || "#"} target={project.github ? "_blank" : undefined} onClick={handleGithubClick}>
 								<TooltipProvider delayDuration={100}>
 									<Tooltip>
 										<TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center
@@ -107,13 +107,12 @@ const Projects = () => {
 						{projectsData.map((project, index) => (
 							<SwiperSlide
 								key={index}
-								className='w-full '
+								className='w-full'
 							>
 								<div
-									className='h-[420px] relative group flex justify-center items-center  bg-white'
+									className='h-[420px] bg-white/5 rounded-xl border border-accent/30 shadow-[inset_0_0_20px_rgba(255,255,255,0.12)] p-2'
 								>
-									<div className='absolute top-0 bottom-0 w-full bg-[rgba(0,0,0,0.1)] z-10'></div>
-									<div className='relative w-full h-full'>
+									<div className='relative w-full h-full overflow-hidden rounded-lg'>
 										<Image src={project.image}
 											fill
 											className="object-contain"
@@ -124,7 +123,7 @@ const Projects = () => {
 						))}
 						<ProjectSliderBtns
 							containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-8 z-20 w-full justify-between xl:w-max xl:justify-none"
-							btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all "
+							btnStyles="w-[44px] h-[44px] rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-accent hover:text-primary text-[22px] flex justify-center items-center transition-all "
 						/>
 					</Swiper>
 				</div>
