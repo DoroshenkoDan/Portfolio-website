@@ -179,6 +179,12 @@
     }
   },
   "projects": {
+    "revolutionAuto": {
+      "description": "Kyiv-based company offering turnkey car imports from the USA, Canada, Europe, Norway, Korea, and China. Sources vehicles at Copart and IAAI auctions, checks their history via Carfax, and handles delivery. The site features a catalog of cars in stock, a customs cost calculator, consignment sales, and fast car buyout services."
+    },
+    "rgLawyer": {
+      "description": "Website of attorney Regina Guseinova, specializing in electronic asset declarations and NACP audits, support for civil servants in service and anti-corruption cases, and defense in white-collar crime cases. Practicing in Ukraine and Poland. The site is available in three languages and features a blog with practical legal insights."
+    },
     "remiword": {
       "description": "Remiword is a web app for learning foreign-language vocabulary. Create personalized word lists, reinforce them through several quiz modes, and watch your progress grow with detailed statistics. Designed to make daily practice simple, engaging, and effective."
     },

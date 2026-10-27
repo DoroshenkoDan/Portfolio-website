@@ -1,6 +1,22 @@
 export const projects = (t) => [
 	{
 		num: "01",
+		title: "Revolution Auto",
+		description: t('projects.revolutionAuto.description'),
+		image: "/assets/work/revolution-auto.webp",
+		live: "https://revolution-auto.com.ua/uk",
+		github: "https://github.com/DoroshenkoDan/RV-Auto-website",
+	},
+	{
+		num: "02",
+		title: "RG Lawyer",
+		description: t('projects.rgLawyer.description'),
+		image: "/assets/work/rglawyer.webp",
+		live: "https://rglawyer.com.ua",
+		github: "https://github.com/DoroshenkoDan/Website-for-Lawyer",
+	},
+	{
+		num: "03",
 		title: "Remiword",
 		description: t('projects.remiword.description'),
 		image: "/assets/work/remiword.webp",
@@ -8,7 +24,7 @@ export const projects = (t) => [
 		github: "https://github.com/DoroshenkoDan/Remiword",
 	},
 	{
-		num: "02",
+		num: "04",
 		title: "Peak Defence",
 		description: t('projects.peakDefence.description'),
 		image: "/assets/work/defence.webp",
@@ -16,7 +32,7 @@ export const projects = (t) => [
 		github: "",
 	},
 	{
-		num: "03",
+		num: "05",
 		title: "Marco",
 		description: t('projects.marco.description'),
 		image: "/assets/work/marco.webp",
@@ -24,7 +40,7 @@ export const projects = (t) => [
 		github: "",
 	},
 	{
-		num: "04",
+		num: "06",
 		title: "Pm-Partners",
 		description: t('projects.pmPartners.description'),
 		image: "/assets/work/pm-partners.webp",
@@ -32,7 +48,7 @@ export const projects = (t) => [
 		github: "",
 	},
 	{
-		num: "05",
+		num: "07",
 		title: "Glamp",
 		description: t('projects.glamp.description'),
 		image: "/assets/work/glamp.webp",
@@ -40,7 +56,7 @@ export const projects = (t) => [
 		github: "",
 	},
 	{
-		num: "06",
+		num: "08",
 		title: "Lemon Squizy",
 		description: t('projects.lemonSquizy.description'),
 		image: "/assets/work/lemon.webp",
